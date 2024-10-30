@@ -26,11 +26,20 @@ layout(location = 3)out vec4[] outUp;
 //#define tessLevel 8
 
 float getTessLevelFromLOD() {
-    vec3 cameraForward = normalize(vec3(camera.view[0].z, camera.view[1].z, camera.view[2].z)); 
-    vec3 cameraPos = -camera.view[3].xyz;
-    vec3 v0 = inV0[0].xyz;
+    vec3 cameraPos = inverse(camera.view)[3].xyz;
+    vec3 v0 = inV0[gl_InvocationID].xyz;
+    float tesslevel;
     float dist = length(cameraPos - v0);
-    return max(4, min(20, floor( 14 - dist)));
+    if  (dist < 2.0) {
+        tesslevel = 16;
+    }else if (dist < 6.0) { 
+        tesslevel = 8; 
+    }else if (dist < 10.0) {
+        tesslevel = 4;
+    }else if (dist < 14.0) {
+        tesslevel = 2;
+    }
+    return tesslevel;
 }
 
 void main() {

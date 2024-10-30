@@ -5,6 +5,7 @@
 #include "Camera.h"
 #include "Scene.h"
 #include "Image.h"
+#include <string>
 
 Device* device;
 SwapChain* swapChain;
@@ -143,7 +144,24 @@ int main() {
     glfwSetMouseButtonCallback(GetGLFWWindow(), mouseDownCallback);
     glfwSetCursorPosCallback(GetGLFWWindow(), mouseMoveCallback);
 
+    int frames = 0;
+	float fps = 0.0;
+    float lastT = 0.0f;
+	std::string windowTitle;
+
     while (!ShouldQuit()) {
+		frames++;
+		double curT = glfwGetTime();
+		if (curT - lastT >= 1.0)
+		{
+			fps = static_cast<float>(frames) / (curT - lastT);
+			lastT = curT;
+			frames = 0;
+		}
+
+		windowTitle = ("Vulkan Grass Renderer | FPS: ") + std::to_string(fps);
+		glfwSetWindowTitle(GetGLFWWindow(), windowTitle.c_str());
+
         glfwPollEvents();
         scene->UpdateTime();
         renderer->Frame();

@@ -43,7 +43,7 @@ layout(set = 2, binding = 2) buffer NumBlades {
 #define TOLERANCE_FRUSTUM		-1.0
 #define DISTANCE_LEVEL 10
 
-#define ORIENTATION_CULLING		1
+#define ORIENTATION_CULLING		0
 #define VIEW_FRUSTUM_CULLING	0
 #define DISTANCE_CULLING		0
 
