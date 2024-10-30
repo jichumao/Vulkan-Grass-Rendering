@@ -136,3 +136,12 @@ The second chart examines FPS variation across different grass blade counts, com
 
 
 In summary, the integration of orientation, frustum, and distance culling significantly enhances rendering performance, especially in complex scenes with high blade counts. The combined approach yields the best results, with distance and orientation culling providing the most consistent gains individually. 
+
+## References
+
+* [Responsive Real-Time Grass Grass Rendering for General 3D Scenes](https://www.cg.tuwien.ac.at/research/publications/2017/JAHRMANN-2017-RRTG/JAHRMANN-2017-RRTG-draft.pdf)
+* [CIS565 Vulkan samples](https://github.com/CIS565-Fall-2017/Vulkan-Samples/tree/master/samples/5_helloTessellation)
+* [Official Vulkan documentation](https://www.khronos.org/registry/vulkan/)
+* [Vulkan tutorial](https://vulkan-tutorial.com/)
+* [RenderDoc blog on Vulkan](https://renderdoc.org/vulkan-in-30-minutes.html)
+* [Tessellation tutorial](https://ogldev.org/www/tutorial30/tutorial30.html)
