@@ -1,8 +1,6 @@
 Vulkan Grass Rendering
 ==================================
 
-**University of Pennsylvania, CIS 565: GPU Programming and Architecture, Project 5**
-
 * Jichu Mao
   * [LinkedIn](https://www.linkedin.com/in/jichu-mao-a3a980226/)
   *  [Personal Website](https://jichu.art/)
@@ -14,7 +12,7 @@ In this project, a grass simulator and renderer is implemented using the Vulkan 
 
 To enhance rendering efficiency, a compute shader is employed to cull grass blades that are not visible or do not contribute significantly to the current frame, reducing the workload on the GPU. The remaining visible blades are processed through a graphics pipeline, where the vertex shader manipulates Bézier control points, the tessellation shaders dynamically generate grass geometry, and the fragment shader applies Lambertian shading to realistically color the grass blades.
 
-This implementation is inspired by the techniques outlined in the paper [Responsive Real-Time Grass Rendering for General 3D Scenes](https://www.cg.tuwien.ac.at/research/publications/2017/JAHRMANN-2017-RRTG/JAHRMANN-2017-RRTG-draft.pdf) by Jahrmann and Wimmer..
+This implementation is inspired by the techniques outlined in the paper [Responsive Real-Time Grass Rendering for General 3D Scenes](https://www.cg.tuwien.ac.at/research/publications/2017/JAHRMANN-2017-RRTG/JAHRMANN-2017-RRTG-draft.pdf) by Jahrmann and Wimmer. The base code for this project is derived from a GPU course project at the University of Pennsylvania
 
 
 ## Showcase
